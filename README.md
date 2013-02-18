@@ -20,7 +20,7 @@ Available as [Composer](http://getcomposer.org) package [icecave/evoke](https://
 
 ```php
 <?php
-use Icecave\Evoke;
+use Icecave\Evoke\Invoker;
 
 $invoker = new Invoker;
 
