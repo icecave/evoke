@@ -1,0 +1,33 @@
+{
+    "name": "icecave/evoke",
+    "description": "Named parameter wrapper for PHP callables.",
+    "keywords": ["function", "keyword", "arguments", "parameters", "invoke", "call", "callable"],
+    "homepage": "https://github.com/IcecaveStudios/evoke",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "James Harris",
+            "email": "james.harris@icecave.com.au"
+        }
+    ],
+    "require": {
+    },
+    "require-dev": {
+        "eloquent/liberator": "~1",
+        "eloquent/typhoon": "~0.8",
+        "icecave/archer": "~0.1"
+    },
+    "autoload": {
+        "psr-0": {
+            "Icecave\\Evoke": "lib",
+            "Icecave\\Evoke\\TypeCheck": "lib-typhoon"
+        }
+    },
+    "extra": {
+        "typhoon": {
+            "output-path": "lib-typhoon",
+            "validator-namespace": "Icecave\\Evoke\\TypeCheck",
+            "use-native-callable": false
+        }
+    }
+}
