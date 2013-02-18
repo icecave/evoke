@@ -464,16 +464,16 @@
         },
         {
             "name": "icecave/archer",
-            "version": "0.1.1",
+            "version": "0.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/IcecaveStudios/archer.git",
-                "reference": "0.1.1"
+                "reference": "0.1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/IcecaveStudios/archer/zipball/0.1.1",
-                "reference": "0.1.1",
+                "url": "https://api.github.com/repos/IcecaveStudios/archer/zipball/0.1.2",
+                "reference": "0.1.2",
                 "shasum": ""
             },
             "require": {
@@ -484,7 +484,7 @@
             "suggest": {
                 "ext-openssl": "OpenSSL is required to encrypt GitHub OAuth tokens for artifact publication."
             },
-            "time": "2013-02-17 02:17:57",
+            "time": "2013-02-18 01:42:16",
             "bin": [
                 "bin/archer",
                 "bin/woodhouse"
