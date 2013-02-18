@@ -13,7 +13,6 @@
     "require": {
     },
     "require-dev": {
-        "eloquent/liberator": "~1",
         "eloquent/typhoon": "~0.8",
         "icecave/archer": "~0.1"
     },

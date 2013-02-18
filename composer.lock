@@ -1,5 +1,5 @@
 {
-    "hash": "91a6829dfb5849f6095de2af4fec6806",
+    "hash": "a8c4f47842b2fc2336ebc418eadfc2cb",
     "packages": [
 
     ],
@@ -252,97 +252,6 @@
                 "equality",
                 "object",
                 "strict"
-            ]
-        },
-        {
-            "name": "eloquent/liberator",
-            "version": "1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/eloquent/liberator.git",
-                "reference": "1.1.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/eloquent/liberator/zipball/1.1.0",
-                "reference": "1.1.0",
-                "shasum": ""
-            },
-            "require": {
-                "eloquent/pops": "3.*",
-                "php": ">=5.3.0"
-            },
-            "time": "2012-08-02 06:30:51",
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Eloquent\\Liberator": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Erin Millard",
-                    "email": "ezzatron@gmail.com",
-                    "homepage": "http://ezzatron.com/"
-                }
-            ],
-            "description": "A proxy for circumventing PHP access modifier restrictions.",
-            "homepage": "https://github.com/eloquent/liberator",
-            "keywords": [
-                "access",
-                "modifier",
-                "object",
-                "private",
-                "protected",
-                "proxy",
-                "reflection"
-            ]
-        },
-        {
-            "name": "eloquent/pops",
-            "version": "3.1.0",
-            "source": {
-                "type": "git",
-                "url": "git://github.com/eloquent/pops.git",
-                "reference": "3.1.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/eloquent/pops/zipball/3.1.0",
-                "reference": "3.1.0",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "time": "2012-08-02 06:17:58",
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Eloquent\\Pops": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Erin Millard",
-                    "email": "ezzatron@gmail.com",
-                    "homepage": "http://ezzatron.com/"
-                }
-            ],
-            "description": "PHP object proxy system.",
-            "homepage": "https://github.com/eloquent/pops",
-            "keywords": [
-                "escaping",
-                "object",
-                "proxy"
             ]
         },
         {
