@@ -14,13 +14,16 @@ class InvokerTypeCheck extends \Icecave\Evoke\TypeCheck\AbstractValidator
     public function invoke(array $arguments)
     {
         $argumentCount = \count($arguments);
-        if ($argumentCount < 2) {
+        if ($argumentCount < 3) {
             if ($argumentCount < 1) {
                 throw new \Icecave\Evoke\TypeCheck\Exception\MissingArgumentException('callable', 0, 'callable');
             }
-            throw new \Icecave\Evoke\TypeCheck\Exception\MissingArgumentException('arguments', 1, 'array<string, mixed>');
-        } elseif ($argumentCount > 2) {
-            throw new \Icecave\Evoke\TypeCheck\Exception\UnexpectedArgumentException(2, $arguments[2]);
+            if ($argumentCount < 2) {
+                throw new \Icecave\Evoke\TypeCheck\Exception\MissingArgumentException('positional', 1, 'array');
+            }
+            throw new \Icecave\Evoke\TypeCheck\Exception\MissingArgumentException('keyword', 2, 'array<string, mixed>');
+        } elseif ($argumentCount > 3) {
+            throw new \Icecave\Evoke\TypeCheck\Exception\UnexpectedArgumentException(3, $arguments[3]);
         }
         $value = $arguments[0];
         if (!\is_callable($value)) {
@@ -31,7 +34,7 @@ class InvokerTypeCheck extends \Icecave\Evoke\TypeCheck\AbstractValidator
                 'callable'
             );
         }
-        $value = $arguments[1];
+        $value = $arguments[2];
         $check = function ($value) {
             if (!\is_array($value)) {
                 return false;
@@ -43,28 +46,31 @@ class InvokerTypeCheck extends \Icecave\Evoke\TypeCheck\AbstractValidator
             }
             return true;
         };
-        if (!$check($arguments[1])) {
+        if (!$check($arguments[2])) {
             throw new \Icecave\Evoke\TypeCheck\Exception\UnexpectedArgumentValueException(
-                'arguments',
-                1,
-                $arguments[1],
+                'keyword',
+                2,
+                $arguments[2],
                 'array<string, mixed>'
             );
         }
     }
 
-    public function toPositional(array $arguments)
+    public function resolveArguments(array $arguments)
     {
         $argumentCount = \count($arguments);
-        if ($argumentCount < 2) {
+        if ($argumentCount < 3) {
             if ($argumentCount < 1) {
                 throw new \Icecave\Evoke\TypeCheck\Exception\MissingArgumentException('reflector', 0, 'ReflectionFunctionAbstract');
             }
-            throw new \Icecave\Evoke\TypeCheck\Exception\MissingArgumentException('arguments', 1, 'array<string, mixed>');
-        } elseif ($argumentCount > 2) {
-            throw new \Icecave\Evoke\TypeCheck\Exception\UnexpectedArgumentException(2, $arguments[2]);
+            if ($argumentCount < 2) {
+                throw new \Icecave\Evoke\TypeCheck\Exception\MissingArgumentException('positional', 1, 'array');
+            }
+            throw new \Icecave\Evoke\TypeCheck\Exception\MissingArgumentException('keyword', 2, 'array<string, mixed>');
+        } elseif ($argumentCount > 3) {
+            throw new \Icecave\Evoke\TypeCheck\Exception\UnexpectedArgumentException(3, $arguments[3]);
         }
-        $value = $arguments[1];
+        $value = $arguments[2];
         $check = function ($value) {
             if (!\is_array($value)) {
                 return false;
@@ -76,11 +82,11 @@ class InvokerTypeCheck extends \Icecave\Evoke\TypeCheck\AbstractValidator
             }
             return true;
         };
-        if (!$check($arguments[1])) {
+        if (!$check($arguments[2])) {
             throw new \Icecave\Evoke\TypeCheck\Exception\UnexpectedArgumentValueException(
-                'arguments',
-                1,
-                $arguments[1],
+                'keyword',
+                2,
+                $arguments[2],
                 'array<string, mixed>'
             );
         }

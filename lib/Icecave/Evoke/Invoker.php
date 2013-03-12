@@ -27,17 +27,18 @@ class Invoker
     /**
      * Invoke a callable using a map of parameter name to argument value.
      *
-     * @param callable             $callable  The callable to invoke.
-     * @param array<string, mixed> $arguments An array mapping parameter name to argument value.
+     * @param callable             $callable   The callable to invoke.
+     * @param array<mixed>         $positional Positional arguments.
+     * @param array<string, mixed> $keyword    Named keywoard arguments.
      *
      * @return mixed The return value of $callable.
      */
-    public function invoke($callable, array $arguments)
+    public function invoke($callable, array $positional, array $keyword)
     {
         $this->typeCheck->invoke(func_get_args());
 
         $reflector = $this->reflectorFactory->create($callable);
-        $arguments = $this->toPositional($reflector, $arguments);
+        $arguments = $this->resolveArguments($reflector, $positional, $keyword);
 
         return call_user_func_array($callable, $arguments);
     }
@@ -46,28 +47,45 @@ class Invoker
      * Arrange a map of parameter name to argument value into an array of positional argument values.
      *
      * @param ReflectionFunctionAbstract $reflector
-     * @param array<string, mixed>       $arguments
+     * @param array<mixed>               $positional Positional arguments.
+     * @param array<string, mixed>       $keyword    Named keywoard arguments.
      *
      * @return array<integer, mixed>
      */
-    public function toPositional(ReflectionFunctionAbstract $reflector, array $arguments)
+    protected function resolveArguments(ReflectionFunctionAbstract $reflector, array $positional, array $keyword)
     {
-        $this->typeCheck->toPositional(func_get_args());
+        $this->typeCheck->resolveArguments(func_get_args());
 
-        $args = array();
+        $resolved = array();
+        $arguments = array();
 
         foreach ($reflector->getParameters() as $parameter) {
             $name = $parameter->getName();
-            if (array_key_exists($name, $arguments)) {
-                $args[] = $arguments[$name];
+
+            if ($positional) {
+                $arguments[] = array_shift($positional);
+            } elseif (array_key_exists($name, $keyword)) {
+                $arguments[] = $keyword[$name];
+                unset($keyword[$name]);
             } elseif ($parameter->isDefaultValueAvailable()) {
-                $args[] = $parameter->getDefaultValue();
+                $arguments[] = $parameter->getDefaultValue();
             } else {
                 throw new BadMethodCallException('No value provided for required parameter "' . $name . '".');
             }
+
+            $resolved[$name] = true;
         }
 
-        return $args;
+        $name = key($keyword);
+        if (array_key_exists($name, $resolved)) {
+            throw new BadMethodCallException('Multiple values provided for parameter "' . $name . '".');
+        } elseif ($name) {
+            throw new BadMethodCallException('Unknown parameter "' . $name . '".');
+        } elseif ($positional) {
+            throw new BadMethodCallException('Too many positional arguments.');
+        }
+
+        return $arguments;
     }
 
     private $typeCheck;
