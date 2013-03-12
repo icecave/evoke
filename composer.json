@@ -1,6 +1,6 @@
 {
     "name": "icecave/evoke",
-    "description": "Invoke PHP callables using a collection of named parameters.",
+    "description": "Invoke PHP callables using positional and named arguments.",
     "keywords": ["function", "keyword", "arguments", "parameters", "invoke", "call", "callable"],
     "homepage": "https://github.com/IcecaveStudios/evoke",
     "license": "MIT",
