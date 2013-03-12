@@ -13,8 +13,8 @@
     "require": {
     },
     "require-dev": {
-        "eloquent/typhoon": "~0.8",
-        "icecave/archer": "~0.1"
+        "eloquent/typhoon": "~0.9",
+        "icecave/archer": "~0.2"
     },
     "autoload": {
         "psr-0": {

@@ -9,7 +9,6 @@
 language: php
 
 php:
-  - 5.3.3
   - 5.3
   - 5.4
   - 5.5
@@ -19,10 +18,8 @@ env:
     - ARCHER_PUBLISH_VERSION=5.4
     - secure: "D1YRYkYzPxpD2wl3KWP6P1bQmfA3YYayNiVqa4QgsHh3xoiWvGzTVIwDLD42+x5h8viyIWdJCXe788kyiQi1t8ZUUMTVsMpErulHW5xhsxuCAPtSWnguG7B3Cl44WKYb4YFICGVQz+bygABheubhFryeN0rzd0Q1nslSxgHADNw="
 
-before_install:
-  - ./.travis.before-install
 install:
-  - composer install --dev --prefer-dist --no-progress --no-interaction
+  - ./.travis.install
 script:
   - ./vendor/bin/archer travis:build
 
