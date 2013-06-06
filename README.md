@@ -1,13 +1,12 @@
 # Evoke
 
 [![Build Status]](http://travis-ci.org/IcecaveStudios/evoke)
-[![Test Coverage]](http://icecave.com.au/evoke/artifacts/tests/coverage)
+[![Test Coverage]](http://icecavestudios.github.io/evoke/artifacts/tests/coverage)
 
 **Evoke** is a small PHP library for invoking callables using positional and named parameters, a little like Python's `*args, **kwargs` syntax.
 
-## Installation
-
-Available as [Composer](http://getcomposer.org) package [icecave/evoke](https://packagist.org/packages/icecave/evoke).
+* Install via [Composer](http://getcomposer.org) package [icecave/evoke](https://packagist.org/packages/icecave/evoke)
+* Read the [API documentation](http://icecavestudios.github.io/evoke/artifacts/documentation/api/)
 
 ## Example
 

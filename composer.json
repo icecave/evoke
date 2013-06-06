@@ -1,6 +1,6 @@
 {
     "name": "icecave/evoke",
-    "description": "Invoke PHP callables using positional and named arguments.",
+    "description": "A library for Invoking PHP callables using positional and named arguments.",
     "keywords": ["function", "keyword", "arguments", "parameters", "invoke", "call", "callable"],
     "homepage": "https://github.com/IcecaveStudios/evoke",
     "license": "MIT",
@@ -11,10 +11,11 @@
         }
     ],
     "require": {
+        "php": ">=5.3"
     },
     "require-dev": {
         "eloquent/typhoon": "~0.9",
-        "icecave/archer": "~0.2"
+        "icecave/archer": "~0.4"
     },
     "autoload": {
         "psr-0": {
