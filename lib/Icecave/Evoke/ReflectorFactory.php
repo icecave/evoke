@@ -1,8 +1,11 @@
 <?php
 namespace Icecave\Evoke;
 
-use Icecave\Evoke\TypeCheck\TypeCheck;
 use Closure;
+use Icecave\Evoke\TypeCheck\TypeCheck;
+use ReflectionFunction;
+use ReflectionFunctionAbstract;
+use ReflectionMethod;
 
 class ReflectorFactory
 {
@@ -18,9 +21,9 @@ class ReflectorFactory
      *
      * @return ReflectionFunctionAbstract
      */
-    public function reflector($callable)
+    public function create($callable)
     {
-        $this->typeCheck->reflector(func_get_args());
+        $this->typeCheck->create(func_get_args());
 
         list($class, $name) = $this->normalize($callable);
 

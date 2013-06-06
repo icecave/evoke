@@ -10,7 +10,7 @@ class ReflectorFactoryTypeCheck extends \Icecave\Evoke\TypeCheck\AbstractValidat
         }
     }
 
-    public function reflector(array $arguments)
+    public function create(array $arguments)
     {
         $argumentCount = \count($arguments);
         if ($argumentCount < 1) {
