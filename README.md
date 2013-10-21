@@ -12,7 +12,6 @@
 ## Example
 
 ```php
-<?php
 use Icecave\Evoke\Invoker;
 
 $invoker = new Invoker;

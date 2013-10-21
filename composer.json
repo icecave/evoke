@@ -15,18 +15,21 @@
         "php": ">=5.3"
     },
     "require-dev": {
-        "eloquent/typhoon": "~0.9",
-        "icecave/archer": "1.0.0-alpha.2"
+        "eloquent/typhoon": "~0.9.0",
+        "icecave/archer": "~1"
+    },
+    "suggest": {
+        "eloquent/asplode": "Drop-in exception-based error handling."
     },
     "autoload": {
         "psr-0": {
-            "Icecave\\Evoke": "lib",
-            "Icecave\\Evoke\\TypeCheck": "lib-typhoon"
+            "Icecave\\Evoke": "src",
+            "Icecave\\Evoke\\TypeCheck": "src-typhoon"
         }
     },
     "extra": {
         "typhoon": {
-            "output-path": "lib-typhoon",
+            "output-path": "src-typhoon",
             "validator-namespace": "Icecave\\Evoke\\TypeCheck",
             "use-native-callable": false
         }

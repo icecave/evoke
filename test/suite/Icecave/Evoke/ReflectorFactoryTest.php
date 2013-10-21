@@ -9,7 +9,7 @@ class ReflectorFactoryTest extends PHPUnit_Framework_TestCase
 {
     public function setUp()
     {
-        $this->_factory = new ReflectorFactory;
+        $this->factory = new ReflectorFactory;
     }
 
     /**
@@ -17,7 +17,7 @@ class ReflectorFactoryTest extends PHPUnit_Framework_TestCase
      */
     public function testCreate($callable, $expected)
     {
-        $result = $this->_factory->create($callable);
+        $result = $this->factory->create($callable);
         $this->assertEquals($expected, $result);
     }
 
@@ -40,7 +40,7 @@ class ReflectorFactoryTest extends PHPUnit_Framework_TestCase
      */
     public function testNormalize($callable, $expected)
     {
-        $result = $this->_factory->normalize($callable);
+        $result = $this->factory->normalize($callable);
         $this->assertSame($expected, $result);
     }
 
