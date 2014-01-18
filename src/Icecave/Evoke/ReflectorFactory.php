@@ -2,18 +2,12 @@
 namespace Icecave\Evoke;
 
 use Closure;
-use Icecave\Evoke\TypeCheck\TypeCheck;
 use ReflectionFunction;
 use ReflectionFunctionAbstract;
 use ReflectionMethod;
 
 class ReflectorFactory
 {
-    public function __construct()
-    {
-        $this->typeCheck = TypeCheck::get(__CLASS__, func_get_args());
-    }
-
     /**
      * Get the appropriate reflector for a callable.
      *
@@ -23,8 +17,6 @@ class ReflectorFactory
      */
     public function create($callable)
     {
-        $this->typeCheck->create(func_get_args());
-
         list($class, $name) = $this->normalize($callable);
 
         if (null === $class) {
@@ -43,8 +35,6 @@ class ReflectorFactory
      */
     public function normalize($callable)
     {
-        $this->typeCheck->normalize(func_get_args());
-
         if ($callable instanceof Closure) {
             $class = null;
             $func = $callable;
@@ -65,6 +55,4 @@ class ReflectorFactory
 
         return array($class, $func);
     }
-
-    private $typeCheck;
 }
