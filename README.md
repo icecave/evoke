@@ -29,6 +29,6 @@ assert($result === array(10, 20, 30, 40));
 ```
 
 <!-- references -->
-[Build Status]: http://b.adge.me/travis/IcecaveStudios/evoke/develop.svg
-[Test Coverage]: http://b.adge.me/coveralls/IcecaveStudios/evoke/develop.svg
-[SemVer]: http://b.adge.me/:semver-0.1.0-yellow.svg
+[Build Status]: https://b.adge.me/travis/IcecaveStudios/evoke/develop.svg
+[Test Coverage]: https://b.adge.me/coveralls/IcecaveStudios/evoke/develop.svg
+[SemVer]: https://b.adge.me/:semver-0.1.0-yellow.svg
