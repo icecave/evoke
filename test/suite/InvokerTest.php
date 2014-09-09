@@ -7,7 +7,7 @@ class InvokerTest extends PHPUnit_Framework_TestCase
 {
     public function setUp()
     {
-        $this->_invoker = new Invoker;
+        $this->invoker = new Invoker;
     }
 
     public function testInvoke()
@@ -22,7 +22,7 @@ class InvokerTest extends PHPUnit_Framework_TestCase
             'b' => 20,
         );
 
-        $result = $this->_invoker->invoke($func, array(), $arguments);
+        $result = $this->invoker->invoke($func, array(), $arguments);
 
         $this->assertSame(array(10, 20, 30), $result);
     }
@@ -38,7 +38,7 @@ class InvokerTest extends PHPUnit_Framework_TestCase
             'a' => 10,
         );
 
-        $result = $this->_invoker->invoke($func, array(), $arguments);
+        $result = $this->invoker->invoke($func, array(), $arguments);
 
         $this->assertSame(array(10, 20, 30), $result);
     }
@@ -61,7 +61,7 @@ class InvokerTest extends PHPUnit_Framework_TestCase
             'a' => 10,
         );
 
-        $result = $this->_invoker->invoke($func, array(), $arguments);
+        $result = $this->invoker->invoke($func, array(), $arguments);
 
         $this->assertSame(array(10, 20, 30), $result);
     }
@@ -78,7 +78,7 @@ class InvokerTest extends PHPUnit_Framework_TestCase
         );
 
         $this->setExpectedException('BadMethodCallException', 'No value provided for required parameter "b".');
-        $result = $this->_invoker->invoke($func, array(), $arguments);
+        $result = $this->invoker->invoke($func, array(), $arguments);
     }
 
     public function testInvokeUnknownParameterFailure()
@@ -93,7 +93,7 @@ class InvokerTest extends PHPUnit_Framework_TestCase
         );
 
         $this->setExpectedException('BadMethodCallException', 'Unknown parameter "b".');
-        $result = $this->_invoker->invoke($func, array(), $arguments);
+        $result = $this->invoker->invoke($func, array(), $arguments);
     }
 
     public function testInvokePositionalArguments()
@@ -108,7 +108,7 @@ class InvokerTest extends PHPUnit_Framework_TestCase
             'e' => 50,
         );
 
-        $result = $this->_invoker->invoke($func, array(10, 20), $arguments);
+        $result = $this->invoker->invoke($func, array(10, 20), $arguments);
 
         $this->assertSame(array(10, 20, 30, 40, 50), $result);
     }
@@ -120,7 +120,7 @@ class InvokerTest extends PHPUnit_Framework_TestCase
         };
 
         $this->setExpectedException('BadMethodCallException', 'Too many positional arguments.');
-        $result = $this->_invoker->invoke($func, array(10, 20), array());
+        $result = $this->invoker->invoke($func, array(10, 20), array());
     }
 
     public function testInvokePositionalArgumentsDuplicateFailure()
@@ -137,6 +137,6 @@ class InvokerTest extends PHPUnit_Framework_TestCase
         );
 
         $this->setExpectedException('BadMethodCallException', 'Multiple values provided for parameter "b".');
-        $result = $this->_invoker->invoke($func, array(10, 20), $arguments);
+        $result = $this->invoker->invoke($func, array(10, 20), $arguments);
     }
 }

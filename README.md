@@ -1,7 +1,8 @@
 # Evoke
 
-[![Build Status]](http://travis-ci.org/IcecaveStudios/evoke)
-[![Test Coverage]](http://icecavestudios.github.io/evoke/artifacts/tests/coverage)
+[![Build Status]](https://travis-ci.org/IcecaveStudios/evoke)
+[![Test Coverage]](https://coveralls.io/r/IcecaveStudios/evoke?branch=develop)
+[![SemVer]](http://semver.org)
 
 **Evoke** is a small PHP library for invoking callables using positional and named parameters, a little like Python's `*args, **kwargs` syntax.
 
@@ -11,7 +12,6 @@
 ## Example
 
 ```php
-<?php
 use Icecave\Evoke\Invoker;
 
 $invoker = new Invoker;
@@ -29,5 +29,6 @@ assert($result === array(10, 20, 30, 40));
 ```
 
 <!-- references -->
-[Build Status]: https://raw.github.com/IcecaveStudios/evoke/gh-pages/artifacts/images/icecave/regular/build-status.png
-[Test Coverage]: https://raw.github.com/IcecaveStudios/evoke/gh-pages/artifacts/images/icecave/regular/coverage.png
+[Build Status]: http://img.shields.io/travis/IcecaveStudios/evoke/develop.svg
+[Test Coverage]: http://img.shields.io/coveralls/IcecaveStudios/evoke/develop.svg
+[SemVer]: http://img.shields.io/:semver-1.0.0-green.svg

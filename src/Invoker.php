@@ -2,7 +2,6 @@
 namespace Icecave\Evoke;
 
 use BadMethodCallException;
-use Icecave\Evoke\TypeCheck\TypeCheck;
 use ReflectionFunctionAbstract;
 
 /**
@@ -15,8 +14,6 @@ class Invoker
      */
     public function __construct(ReflectorFactory $reflectorFactory = null)
     {
-        $this->typeCheck = TypeCheck::get(__CLASS__, func_get_args());
-
         if (null === $reflectorFactory) {
             $reflectorFactory = new ReflectorFactory;
         }
@@ -35,8 +32,6 @@ class Invoker
      */
     public function invoke($callable, array $positional, array $keyword)
     {
-        $this->typeCheck->invoke(func_get_args());
-
         $reflector = $this->reflectorFactory->create($callable);
         $arguments = $this->resolveArguments($reflector, $positional, $keyword);
 
@@ -54,8 +49,6 @@ class Invoker
      */
     protected function resolveArguments(ReflectionFunctionAbstract $reflector, array $positional, array $keyword)
     {
-        $this->typeCheck->resolveArguments(func_get_args());
-
         $resolved = array();
         $arguments = array();
 
@@ -88,6 +81,5 @@ class Invoker
         return $arguments;
     }
 
-    private $typeCheck;
     private $reflectorFactory;
 }

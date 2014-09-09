@@ -1,33 +1,38 @@
 {
     "name": "icecave/evoke",
-    "description": "A library for Invoking PHP callables using positional and named arguments.",
-    "keywords": ["function", "keyword", "arguments", "parameters", "invoke", "call", "callable"],
+    "description": "A library for invoking PHP callables using positional and named arguments.",
+    "keywords": [
+        "function",
+        "keyword",
+        "arguments",
+        "parameters",
+        "invoke",
+        "call",
+        "callable"
+    ],
     "homepage": "https://github.com/IcecaveStudios/evoke",
     "license": "MIT",
     "authors": [
         {
             "name": "James Harris",
-            "email": "james.harris@icecave.com.au"
+            "email": "james.harris@icecave.com.au",
+            "homepage": "https://github.com/jmalloc"
         }
     ],
     "require": {
         "php": ">=5.3"
     },
     "require-dev": {
-        "eloquent/typhoon": "~0.9",
-        "icecave/archer": "~0.4"
+        "icecave/archer": "~1"
     },
     "autoload": {
-        "psr-0": {
-            "Icecave\\Evoke": "lib",
-            "Icecave\\Evoke\\TypeCheck": "lib-typhoon"
+        "psr-4": {
+            "Icecave\\Evoke\\": "src"
         }
     },
     "extra": {
-        "typhoon": {
-            "output-path": "lib-typhoon",
-            "validator-namespace": "Icecave\\Evoke\\TypeCheck",
-            "use-native-callable": false
+        "branch-alias": {
+            "dev-develop": "1.0.x-dev"
         }
     }
 }
