@@ -1,7 +1,15 @@
 {
     "name": "icecave/evoke",
-    "description": "A library for Invoking PHP callables using positional and named arguments.",
-    "keywords": ["function", "keyword", "arguments", "parameters", "invoke", "call", "callable"],
+    "description": "A library for invoking PHP callables using positional and named arguments.",
+    "keywords": [
+        "function",
+        "keyword",
+        "arguments",
+        "parameters",
+        "invoke",
+        "call",
+        "callable"
+    ],
     "homepage": "https://github.com/IcecaveStudios/evoke",
     "license": "MIT",
     "authors": [
@@ -17,12 +25,14 @@
     "require-dev": {
         "icecave/archer": "~1"
     },
-    "suggest": {
-        "eloquent/asplode": "Drop-in exception-based error handling."
-    },
     "autoload": {
-        "psr-0": {
-            "Icecave\\Evoke": "src"
+        "psr-4": {
+            "Icecave\\Evoke\\": "src"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-develop": "1.0.x-dev"
         }
     }
 }
