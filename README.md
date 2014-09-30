@@ -28,6 +28,11 @@ $result = $invoker->invoke($func, $positionalArguments, $keywordArguments);
 assert($result === array(10, 20, 30, 40));
 ```
 
+## Contact us
+
+* Follow [@IcecaveStudios](https://twitter.com/IcecaveStudios) on Twitter
+* Visit the [Icecave Studios website](http://icecave.com.au)
+
 <!-- references -->
 [Build Status]: http://img.shields.io/travis/IcecaveStudios/evoke/develop.svg?style=flat-square
 [Test Coverage]: http://img.shields.io/coveralls/IcecaveStudios/evoke/develop.svg?style=flat-square
