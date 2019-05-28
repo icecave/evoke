@@ -15,7 +15,7 @@ class Invoker
     public function __construct(ReflectorFactory $reflectorFactory = null)
     {
         if (null === $reflectorFactory) {
-            $reflectorFactory = new ReflectorFactory;
+            $reflectorFactory = new ReflectorFactory();
         }
 
         $this->reflectorFactory = $reflectorFactory;

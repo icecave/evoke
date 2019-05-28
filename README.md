@@ -1,13 +1,13 @@
 # Evoke
 
-[![Build Status]](https://travis-ci.org/IcecaveStudios/evoke)
-[![Test Coverage]](https://coveralls.io/r/IcecaveStudios/evoke?branch=develop)
-[![SemVer]](http://semver.org)
+[![Build Status](http://img.shields.io/travis/icecave/evoke/master.svg?style=flat-square)](https://travis-ci.org/icecave/evoke)
+[![Code Coverage](https://img.shields.io/codecov/c/github/icecave/evoke/master.svg?style=flat-square)](https://codecov.io/github/icecave/evoke)
+[![Latest Version](http://img.shields.io/packagist/v/icecave/evoke.svg?style=flat-square&label=semver)](https://semver.org)
 
-**Evoke** is a small PHP library for invoking callables using positional and named parameters, a little like Python's `*args, **kwargs` syntax.
+**Evoke** is a small PHP library for invoking callables using positional and
+named parameters, a little like Python's `*args, **kwargs` syntax.
 
-* Install via [Composer](http://getcomposer.org) package [icecave/evoke](https://packagist.org/packages/icecave/evoke)
-* Read the [API documentation](http://icecavestudios.github.io/evoke/artifacts/documentation/api/)
+    composer require icecave/evoke
 
 ## Example
 
@@ -27,8 +27,3 @@ $result = $invoker->invoke($func, $positionalArguments, $keywordArguments);
 
 assert($result === array(10, 20, 30, 40));
 ```
-
-<!-- references -->
-[Build Status]: http://img.shields.io/travis/IcecaveStudios/evoke/develop.svg
-[Test Coverage]: http://img.shields.io/coveralls/IcecaveStudios/evoke/develop.svg
-[SemVer]: http://img.shields.io/:semver-1.0.0-green.svg
