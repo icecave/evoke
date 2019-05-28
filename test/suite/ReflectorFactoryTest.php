@@ -1,11 +1,11 @@
 <?php
 namespace Icecave\Evoke;
 
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 use ReflectionFunction;
 use ReflectionMethod;
 
-class ReflectorFactoryTest extends PHPUnit_Framework_TestCase
+class ReflectorFactoryTest extends TestCase
 {
     public function setUp()
     {

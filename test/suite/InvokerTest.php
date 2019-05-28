@@ -1,9 +1,9 @@
 <?php
 namespace Icecave\Evoke;
 
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 
-class InvokerTest extends PHPUnit_Framework_TestCase
+class InvokerTest extends TestCase
 {
     public function setUp()
     {
@@ -77,7 +77,7 @@ class InvokerTest extends PHPUnit_Framework_TestCase
             'a' => 10,
         );
 
-        $this->setExpectedException('BadMethodCallException', 'No value provided for required parameter "b".');
+        $this->expectException('BadMethodCallException', 'No value provided for required parameter "b".');
         $result = $this->invoker->invoke($func, array(), $arguments);
     }
 
@@ -92,7 +92,7 @@ class InvokerTest extends PHPUnit_Framework_TestCase
             'b' => 20,
         );
 
-        $this->setExpectedException('BadMethodCallException', 'Unknown parameter "b".');
+        $this->expectException('BadMethodCallException', 'Unknown parameter "b".');
         $result = $this->invoker->invoke($func, array(), $arguments);
     }
 
@@ -119,7 +119,7 @@ class InvokerTest extends PHPUnit_Framework_TestCase
             return array($a);
         };
 
-        $this->setExpectedException('BadMethodCallException', 'Too many positional arguments.');
+        $this->expectException('BadMethodCallException', 'Too many positional arguments.');
         $result = $this->invoker->invoke($func, array(10, 20), array());
     }
 
@@ -136,7 +136,7 @@ class InvokerTest extends PHPUnit_Framework_TestCase
             'e' => 50,
         );
 
-        $this->setExpectedException('BadMethodCallException', 'Multiple values provided for parameter "b".');
+        $this->expectException('BadMethodCallException', 'Multiple values provided for parameter "b".');
         $result = $this->invoker->invoke($func, array(10, 20), $arguments);
     }
 }
